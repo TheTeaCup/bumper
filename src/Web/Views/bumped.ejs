@@ -1,0 +1,61 @@
+<%- include('./Blocks/Header.ejs', { Bumper, user, Page, Redirect: "/bumped" }) %>
+<link rel="stylesheet" href="/css/page.css">
+
+<div class="container">
+	
+		<div class="block-center">
+      
+      <% for(var i=0; i < Data.length; i++) { %>
+			
+			<div class="card server-block level1">
+			  <div class="card-body">
+        <% if(Data[i].status === "Official") { %>
+			  <span class="badges2" style="background:">Offical</span>
+          <% } else { %>
+        <span class="badges0">normal</span>
+          <% } %>
+          <% if(Data[i].status === "Verified") { %>
+			  <span class="badges1" style="background:">Verified</span>
+          <% } else { %>
+        <span class="badges0">normal</span>
+          <% } %>
+          <% if(user) { %>
+            <% if(Bumper.Developers.includes(user.id)) { %>
+            <span class="badges3"><a onclick=goto("/api/s/<%= Data[i].id %>/recent-remove")>RR</a></span>
+            <% } %>
+        <% } %>
+			  <div>
+			  	<a href="/info/<%= Data[i].id %>"><img class="card-avatar" src="<%= Data[i].iconURL %>" onerror="this.onerror=null;this.src='/avatar.jpg';"></a>
+			  </div>
+			    <h5 class="card-title" title="<%= Data[i].name %>"><%= Data[i].name %></h5>
+			    <h6 class="card-subtitle mb-2 text-muted">
+				<% if(Data[i].Tags) { %>
+					<% for(var i=0; i < Data[i].Tags.length; i++) { %> 
+            <% if(Tags === "") return; %>
+				       <a class="btn btn-success" href="/">
+					     <%- Data[i].Tags %>
+				       </a>
+					<% } %>
+        <% } %>
+            
+			    </h6>
+			    <p class=""><div class="le card-text description"><%- Data[i].desc %></div></p>
+			    <div class="server-bottom">
+				    <span class="members"><i class="fas fa-users"></i><%= Data[i].members %></span>
+				    <a href="/info/<%= Data[i].id %>/invite" class="btn btn-success join" rel="nofollow" target="blank">Join Server</a>
+				    <a href="/info/<%= Data[i].id %>" style="background:#b2c8d2" class="btn btn-r info"><i class="fas fa-info" style="padding:0;"></i></a>
+				</div>
+			  </div>
+			</div>
+      
+      <% } %>
+
+			
+			  </div>
+			</div>
+			
+		</div>
+		<br>
+	</div>
+
+<%- include('./Blocks/Footer.ejs') %>

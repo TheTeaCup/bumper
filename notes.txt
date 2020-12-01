@@ -1,0 +1,1 @@
+ <a class="btn btn-success btn-myserver" href="https://discordapp.com/api/oauth2/authorize?client_id=561906688559677465&permissions=117760&scope=bot"><i class="fas fa-robot"></i> Add Bot <span class="badge badge-danger">NEW!</span></a>

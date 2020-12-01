@@ -1,0 +1,110 @@
+<%- include('./Blocks/Header.ejs', { Bumper, user, Page, Redirect: "/me" }) %>
+<link rel="stylesheet" href="/css/page.css">
+
+<center><h1>
+  Hello! Welcome to Bumper's Website!
+</h1>
+  <br>
+  
+<%if(user) {%>
+    <h1 id="demo"></h1>
+<script> 
+var i = 0;
+var txt = 'Hi <%= user.username %>#<%= user. discriminator %>'; /* The text */
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}</script>
+    
+  <% } %>
+</center>
+
+	<!-- Content -->
+<% if(give) { %>}
+	<div class="container">
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+		  <strong>Giveaway!</strong> Take part in our giveaway and get chance to win Silver status for 14 days! <a href="https://discordserverslist.com/giveaway">Read more...</a>
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+<% } %>
+
+<% if(MessageDefined === 1){ %>
+       <br>
+<div class="container">
+ <center>
+   <div class="row" role="alert">
+     <div class="col-md-12" role="alert">
+       <div class="alert alert-primary alert-success" role="alert">
+         <button type="button" class="close" data-dismiss="alert">×</button>
+         <h4 class="alert-heading">Done!</h4>
+         <p class="mb-0"><%= Message %></p>
+      </div>
+    </div>
+  </div>
+ </center>
+</div>
+
+<% } %>
+
+<!-- Welcome Header will go here when i have time to make one. -->
+
+<div class="container">
+	
+		<div class="block-center">
+      
+      <% for(var i=0; i < Data.length; i++) { %>
+			
+			<div class="card server-block level1">
+			  <div class="card-body">
+        <% if(Data[i].status === "Official") { %>
+			  <span class="badges2" style="background:">Offical</span>
+          <% } else { %>
+        <span class="badges0">normal</span>
+          <% } %>
+          <% if(Data[i].status === "Verified") { %>
+			  <span class="badges1" style="background:">Verified</span>
+          <% } else { %>
+        <span class="badges0">normal</span>
+          <% } %>
+			  <div>
+			  	<a href="/info/<%= Data[i].id %>"><img class="card-avatar" src="<%= Data[i].iconURL %>" onerror="this.onerror=null;this.src='/avatar.jpg';"></a>
+			  </div>
+			    <h5 class="card-title" title="<%= Data[i].name %>"><%= Data[i].name %></h5>
+			    <h6 class="card-subtitle mb-2 text-muted">
+				<% if(Data[i].Tags) { %>
+					<% for(var i=0; i < Data[i].Tags.length; i++) { %> 
+            <% if(Tags === "") return; %>
+				       <a class="btn btn-success" href="/">
+					     <%- Data[i].Tags %>
+				       </a>
+					<% } %>
+        <% } %>
+					
+			    </h6>
+			    <p class=""><div class="le card-text description"><%- Data[i].desc %></div></p>
+			    <div class="server-bottom">
+				    <span class="members"><i class="fas fa-users"></i><%= Data[i].members %></span>
+				    <a href="/info/<%= Data[i].id %>/invite" class="btn btn-success join" rel="nofollow" target="blank">Join Server</a>
+				    <a href="/info/<%= Data[i].id %>" style="background:#b2c8d2" class="btn btn-r info"><i class="fas fa-info" style="padding:0;"></i></a>
+				</div>
+			  </div>
+			</div>
+      
+      <% } %>
+
+			
+			  </div>
+			</div>
+			
+		</div>
+		<br>
+	</div>
+
+<%- include('./Blocks/Footer.ejs') %>
