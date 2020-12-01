@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= Guild.name %></title>
+    <link href="https://cdn.glitch.com/0ce75f44-0720-4204-9b62-85f1028d9f7a%2FBumpBeta_yellow.png?v=1559845376082" rel="icon" type="image/x-icon">
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="Howdy! I'm here to help you gain members for you're server.">
+    <meta name="keywords" content="Discord Bot"/>
+  
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:title" content="Bumper" />
+    <meta name="twitter:description" content="Howdy! I'm here to help you gain members for you're server." />
+    <meta name="twitter:image" content='https://cdn.glitch.com/0ce75f44-0720-4204-9b62-85f1028d9f7a%2FBumpBeta_yellow.png?v=1559845376082'>
+    <meta name="theme-color" content="#DAF7A6"/>
+
+    <meta property="og:title" content="Bumper" />
+    <meta property="og:url" content="https://bumper.glitch.me/" />
+    <meta property="og:description" content="Howdy! I'm here to help you gain members for you're server." />
+    <meta property="og:image" content='https://cdn.glitch.com/0ce75f44-0720-4204-9b62-85f1028d9f7a%2FBumpBeta_yellow.png?v=1559845376082' />
+  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" type="text/css">
+    <link rel="stylesheet" id="cssproto" href="https://bumper.glitch.me/css/index.css" media="screen">
+    <link rel="stylesheet" href="https://bumper.glitch.me/css/page.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,400,700" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128481129-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-128481129-1');
+    </script>
+  </head>
+    <nav class="is-widescreen is-mobile" id="menu">
+    <center>
+      <nav class="navbar navbar-expand-lg navbar-light"> 
+        <a id="nav-io" title="Advertiser Your Server | Advertise Other" class="navbar-brand" href="/"><img src="https://cdn.glitch.com/0ce75f44-0720-4204-9b62-85f1028d9f7a%2FBumpBeta_yellow.png?v=1559845376082" width="30" height="30" class="d-inline-block align-top rounded-circle" alt=""> Bumper</a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>  
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <li class="nav-item"><a id="nav-coco" class="nav-link" href="https://discord.gg/NmNB7CK">Server</a></li>
+            <li class="nav-item"><a id="nav-coc" class="nav-link" href="/">Servers</a></li>
+            <li class="nav-item"><a id="nav-c" class="nav-link" href="/bumped">Recent Bumped</a></li>
+          </div>
+        </div> 
+        <ul class="navbar-nav">  
+          <% if(user) { %>          
+            <li class="dropdown">
+              <a id="nav-cho" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= user.username %>#<%= user.discriminator %></a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">   
+                <h6 class="dropdown-header"><i class="fa fa-user" aria-hidden="true"></i> <%= user.username %></h6>
+                <a class="dropdown-item" href="/user/<%= user.id%>"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</a>
+                <a class="dropdown-item" href="/me"><i class="fa fa-cogs" aria-hidden="true"></i> Your Servers</a>
+                <% if(Bumper.Developers.includes(user.id)) { %> <a class="dropdown-item" href="/admin"><i class="fa fa-key"></i> Admin</a> <% } %>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+              </div>
+            </li>
+          <% } else { %>
+            <li class="nav-item"><a id="nav-coco" onclick=goto("/login?redirect=/info/<%= Guild.id %>") class="nav-link"><i class="fa fa-key" aria-hidden="true"></i> Login With Discord</a></li>
+          <% } %>
+        </ul>    
+      </nav>
+    </center>
+  </nav>
+  
+<!-- Content -->
+	<div class="index-container">
+		<div class="text-center">
+		
+			<img class="server-avatar" src="<%= Guild.iconURL %>" onerror="this.onerror=null;this.src='https://i.imgur.com/2otMem9.png';">
+			<p class="server-name" title="<%= Guild.name %>"><%= Guild.name %></p>
+			<ul class="tags">
+
+<% for(var i=0; i < Tags.length; i++) { %> 
+        <% if(Tags === "") return; %>
+				<a class="btn btn-success" href="/">
+					<%- Tags[i] %>
+				</a>
+<% } %>
+
+			</ul>
+		
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row server-container">
+		  <div class="col-lg-3">
+		  
+			<div class="card server-info">
+			  <div class="card-body">
+				<h5 class="le card-title" styele="font-size:25px;">Server Info</h5>
+				<ul class="list-group list-group-flush">
+				  <li class="le list-group-item">Status: <%= Status %></li>
+				  <li class="le list-group-item">Members: <%= Guild.memberCount %></li>
+				  <li class="le list-group-item">Online: <!--Guild.members.filter(m => m.presence.status === 'online').size --></li>
+          <% if(timeObj === "n/a") { %> <li class="le list-group-item">Last Bump: Never</li> <% } else { %>
+          <% if(timeObj.hours === 0) { %> <li class="le list-group-item">Last Bumped: <%= timeObj.minutes %> mins ago</li> <% } else { %> <li class="le list-group-item">Last Bumped: <%= timeObj.hours %> hours ago</li> <% } %>
+          <% } %>
+				</ul>
+			  </div>
+			</div>
+      <a class="btn btn-bump btn-block <%= Option %>" href="/info/<%= Guild.id %>/bump" style="margin-bottom: 15px; background:#b2c8d2" rel="nofollow" >Bump The Server</a>
+			<a class="btn btn-success btn-block <%= Option %>" href="/info/<%= Guild.id %>/invite" style="margin-bottom: 15px;" rel="nofollow" target="_blank">Join the server</a>
+		<% if(user){ %>
+      <% if(Users.includes(user.id)) { %>
+        <a class="btn btn-orange btn-block" onclick=goto('/info/<%= Guild.id %>/edit') style="margin-bottom: 15px;">Edit you're server</a>
+        <% } %>
+      <% if(Bumper.Developers.includes(user.id)) { %> 
+        <% let ver; if(Status === "Official") { ver = "disabled" } if(Status === "Verified") { ver = "disabled" } %>
+      <a class="btn btn-gold btn-block <%= ver %>" onclick=goto('/info/<%= Guild.id %>/verify') style="margin-bottom: 15px; background:gold" >Verify the Server</a>
+      <% } %>
+      <% if(Bumper.Developers.includes(user.id)) { %> 
+        <% let ver; if(Status === "Official") { ver = "disabled" } %>
+      <a class="btn btn-gold btn-block <%= ver %>" onclick=goto('/info/<%= Guild.id %>/official') style="margin-bottom: 15px; background:gold" >Officalialize the Server</a>
+      <% } %>
+        <% if(Hidden.includes(Guild.id)) { %> 
+        <a class="btn btn-gold btn-block" onclick=goto('/info/<%= Guild.id %>/un-hide') style="margin-bottom: 15px; background:gold">Show you're server</a>
+            <% } else { %> 
+        <% if(Users.includes(user.id)) { %>
+        <a class="btn btn-danger btn-block" onclick=goto('/info/<%= Guild.id %>/hide') style="margin-bottom: 15px;">Hide you're server</a>
+        <% } %>
+        <% } %> 
+    <% } %>
+		  </div>
+		  <div class="col-lg-9">
+                  
+<% if(UpV === "123"){ %>
+       <br>
+<div class="container">
+ <center>
+   <div class="row" role="alert">
+     <div class="col-md-12" role="alert">
+       <div class="alert alert-primary alert-success" role="alert">
+         <button type="button" class="close" data-dismiss="alert">×</button>
+         <h4 class="alert-heading">Done!</h4>
+         <p class="mb-0">You Upvoted <%= Guild.name %></p>
+      </div>
+    </div>
+  </div>
+ </center>
+</div>
+
+<% } %>
+        
+<% if(UpV === "425"){ %>
+       <br>
+<div class="container">
+ <center>
+   <div class="row" role="alert">
+     <div class="col-md-12" role="alert">
+       <div class="alert alert-primary alert-danger" role="alert">
+         <button type="button" class="close" data-dismiss="alert">×</button>
+         <h4 class="alert-heading">Oops, there is a problem..</h4>
+         <p class="mb-0">Your Server has too many tags please contact <bold>Tea Cup#9999</bold> If you think this is wrong.</p>
+      </div>
+    </div>
+  </div>
+ </center>
+</div>
+
+<% } %>
+        
+<% if(min){ %>
+       <br>
+<div class="container">
+ <center>
+   <div class="row" role="alert">
+     <div class="col-md-12" role="alert">
+       <div class="alert alert-primary alert-danger" role="alert">
+         <button type="button" class="close" data-dismiss="alert">×</button>
+         <h4 class="alert-heading">Oops, there is a problem..</h4>
+         <p class="mb-0">You can upvote this server in <bold><%= min %> Minute(s)</bold></p>
+      </div>
+    </div>
+  </div>
+ </center>
+</div>
+
+<% } %>
+        
+			<div class="card">
+			  <div class="card-body">
+				<h5 class="card-title">Server Description</h5>
+				<div class="le card-text server-desc"><%- html %></div>
+				
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+  
+<%- include('./Blocks/Footer.ejs') %>
+  
+</html>

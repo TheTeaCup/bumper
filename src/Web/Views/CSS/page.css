@@ -1,0 +1,557 @@
+sa.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: none;
+  color: white;
+  text-align: center;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
+ul {
+	list-style: none;
+	padding: 0;
+}
+.btn-r {
+	background: #b2c8d2;
+	color: white!important;
+}
+.btn-r:hover {
+	background: #b2c8d2;
+	color: white!important;
+}
+.btn-bump {
+  background: #b2c8d2;
+  color: white!important;
+}
+.link {
+	color: #2d3339;
+}
+.link:hover {
+	color: #444d55;
+}
+.help-block {
+	color: #737373;
+	margin-top: -10px;
+	margin-bottom: 15px;
+	font-size: 14px;
+}
+.no-padding {
+	padding: 0;
+}
+.white {
+	color: white
+}
+#eXTReMe-Free-discord2 img{
+	width: 1px!important;
+	height: 1px!important;
+}
+/* NAVIGATION */
+i {
+	padding: 0 5px 0 0;
+}
+
+.navbar-no-margin {
+	margin: 0 0 0 0!important;
+}
+
+.navbar-brand>img {
+	height: 35px;
+}
+.avatar>a {
+	padding: 0;
+	cursor: pointer;
+}
+.avatar i{
+	padding: 0 2px 0 0;
+}
+.navbar .login {
+	padding-right: 15px!important;
+}
+.navbar .register {
+	background: #28A745;
+	border-radius: 3px;
+	padding: 4px 10px;
+	margin: auto;
+	color: white!important;
+}
+.navbar .register:hover {
+	background: #23903c;
+	color: white!important;
+}
+.dropdown-item {
+	font-size: 0.9rem;
+}
+/* Header */
+
+/* Index container */
+.index-container {
+	width: 100%;
+	height: 210px;
+	background: url('https://cdn.glitch.com/0ce75f44-0720-4204-9b62-85f1028d9f7a%2Fsnownode.png?v=1560784731147');
+	color: white;
+	margin-bottom: 30px;
+	padding: 20px 0 0 0;
+	-webkit-box-shadow: 0px 1px 20px 0px rgba(73, 73, 73, 0.5);
+	-moz-box-shadow: 0px 1px 20px 0px rgba(73, 73, 73, 0.5);
+	box-shadow: 0px 1px 20px 0px rgba(73, 73, 73, 0.5);
+}
+
+.index-title {
+	font-size: 2.250em;
+	margin-bottom: 15px;
+}
+.index-text {
+	font-size: 18px;
+	margin: -9px 0 10px 0px;
+}
+
+.index-container .search {
+	border-top-left-radius: 0!important;
+	border-bottom-left-radius: 0!important;
+	position: relative;
+	right: 3px;
+}
+.index-container form {
+	width: 100%;
+	display:inherit;
+}
+.index-container .tags {
+	display: -webkit-inline-box;
+}
+.index-container .tags a {
+	font-size: 14px;
+	margin: 10px 2px -5px 2px;
+}
+.index-container .tags .btn {
+	padding: .16rem .70rem;
+}
+
+/* Server Card */
+.block-center {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+/* Lvls*/
+.level0 {
+	margin: 9px 9px 0 0;
+	width: 296px;
+	border: 1px solid rgba(0,0,0,0.20);
+}
+.level1 {
+	margin: 9px 9px 0 0;
+	width: 296px;
+	border: 2px solid rgb(192,192,192);
+}
+.level2 {
+	margin: 9px 9px 0 0;
+	width: 296px;
+	border: 2px solid rgba(255, 215, 0, 0.8);
+}
+
+.badges0 {
+	display: none;
+}
+
+.badges1 {
+	float: right;
+	margin: -25px 0 0 0;
+	position: relative;
+	top: 13px;
+	left: 12px;
+	border-radius: 0 2px 0 5px;
+	background: rgb(192,192,192);
+	padding: 0 10px;
+}
+.badges2 {
+	float: right;
+	margin: -25px 0 0 0;
+	position: relative;
+	top: 13px;
+	left: 12px;
+	border-radius: 0 2px 0 5px;
+	background: #7289DA;
+	padding: 0 10px;
+}
+.badges3 {
+	float: left;
+	margin: -25px 0 0 0;
+	position: relative;
+	top: 13px;
+	left: 12px;
+	border-radius: 0 2px 0 5px;
+	background: #DAF7A6;
+  color: grey;
+	padding: 0 10px;
+}
+
+
+/* Card Body */
+.server-block .card-body {
+	padding: 0.70rem;
+}
+.server-block .card-avatar {
+	display: block;
+	width: 90px;
+	border-radius: 50px;
+	margin: 0 auto 9px;
+	border: 1px solid rgba(0,0,0,.125);
+}
+.server-block .card-title {
+	text-align: center;
+	margin-bottom: 0.8rem;
+	text-overflow: ellipsis;
+	overflow: hidden; 
+	white-space: nowrap;
+}
+.server-block .card-subtitle {
+	text-align: center;
+	margin-bottom: .9rem!important;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.server-block .card-subtitle a{
+	font-size: 12px;
+	padding: 2px 5px;
+	margin-bottom: 0.2rem;
+}
+.server-block .card-text {
+	font-size: 14px;
+}
+.server-block .description {
+	height: 130px;
+}
+.server-block .server-bottom {
+	display: flex;
+	justify-content: space-between;
+}
+.server-block .server-bottom .join {
+	font-size: 15px;
+	margin-right: 20px;
+	padding: 2px 8px;
+}
+.server-block .server-bottom .members {
+	padding: 3px 0 0 0;
+}
+.server-block .server-bottom .info {
+	color: white;
+	padding: 1px 9px;
+	font-size: 16px;
+	text-align: center;
+}
+.server-block .tag-block {
+	background: #28A745;
+	color: white;
+}
+.server-block .tag-block {
+	background: #00b300;
+	color: white;
+}
+.server-block .join-block {
+	background: #DC3545;
+	color: white;
+}
+
+
+/* Modifications for sticky footer */
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	margin-bottom: 130px;
+}
+.sticky-footer {
+	position: absolute;
+	left: 0;
+	background-color: #2C2F33;
+	width: 100%;
+	text-align: center;
+	padding-top: 15px;
+	border-top: 1px solid #1e1e1e;
+	margin-top: 40px;
+}
+.sticky-footer, .sticky-footer a {
+	color: #eaeaea;
+}
+
+.sticky-footer a:hover {
+	color: #dedede;
+}
+.sticky-footer .social-media i {
+	
+}
+.footer-copyright {
+	background: #2C2F33;
+}
+
+/* INFO PAGE */
+
+
+/*server header*/
+
+.index-container .server-avatar {
+	border-radius: 50px;
+	width: 100px;
+	border: 1px solid rgba(0,0,0,.125);
+
+}
+.index-container .server-name {
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: -0.5rem;
+}
+
+/* server body*/
+.server-info .card-body {
+	padding: 1.25rem 0 0 0;
+}
+.server-info .card-title {
+	padding: 0 1.25rem
+}
+.server-info {
+	margin-bottom: 15px;
+}
+.server-container {
+	margin-bottom: 50px;
+}
+.server-desc {
+	white-space: pre-wrap;
+}
+
+
+/* USER PAGE */
+
+.myserver {
+	margin-bottom: -0.5rem;
+}
+.btn-myserver {
+	font-size: 14px;
+	margin-top: -0.5rem;
+}
+
+.myservers .avatar {
+	width: 55px;
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,.125);
+}
+.myservers .card-body {
+	padding: 10px;
+}
+.myservers .myservers-main {
+	position: relative;
+	bottom: 56px;
+	left: 68px;
+}
+.myservers .card-subtitle a{
+	font-size: 12px;
+	padding: 2px 5px;
+	margin-bottom: 0.2rem;
+}
+.myservers .card-subtitle {
+	margin-bottom: .9rem!important;
+}
+.myservers .card-text {
+	position: relative;
+	bottom: 56px;
+}
+
+.myblock {
+	display: flex;
+	flex-flow: row wrap;
+}
+.myserver-block {
+	margin: 0 9px 9px 0;
+	width: 294px;
+}
+.myserver-block .card-body {
+	padding: 0.70rem;
+}
+.myserver-block .card-avatar {
+	display: block;
+	width: 90px;
+	border-radius: 50px;
+	margin: 0 auto 9px;
+	position: relative;
+	left: 8px;
+	border: 1px solid rgba(0,0,0,.125);
+}
+.myserver-block .card-title {
+	text-align: center;
+	margin-bottom: 0.8rem;
+}
+.myserver-block .card-subtitle {
+	text-align: center;
+	margin-bottom: .9rem!important;
+}
+.myserver-block .card-subtitle a{
+	font-size: 12px;
+	padding: 2px 5px;
+	margin-bottom: 0.2rem;
+}
+.myserver-block .card-text {
+	font-size: 16px;
+	text-align: center;
+}
+.myserver-block .description {
+	height: 130px;
+}
+.myserver-block .server-bottom {
+	text-align: center;
+}
+.myserver-block .server-bottom a {
+	margin: 0 10px;
+	font-size: 30px;
+	color: #364d63;
+}
+
+.myserver-block .fa-times {
+	float: right;
+}
+
+/* add server*/
+
+.addserver-block {
+	margin: 0 9px 9px 0;
+	width: 294px;
+}
+.addserver-block .card-avatar {
+	display: block;
+	width: 90px;
+	border-radius: 50px;
+	margin: 0 auto 9px;
+	border: 1px solid rgba(0,0,0,.125);
+}
+.addserver-block .card-title {
+	text-align: center;
+	margin-bottom: 0.8rem;
+}
+.addserver-block .server-bottom {
+	text-align: center;
+}
+.addserver-block .server-bottom .btn {
+	margin: 0 10px;
+	font-size: 14px;
+}
+/* Add Form*/
+
+.server-form-panel {
+	margin: 0 auto 50px auto;
+}
+
+/* Premium page */
+.premium-page {
+	display: flex;
+	justify-content: center;
+}
+.premium-page ul {
+	list-style: circle;
+	padding: 0 25px;
+}
+.premium-page .pay-info {
+	text-align: center;
+	margin-bottom: 0.4rem;
+}
+.premium-page form {
+	text-align: center;
+} 
+
+.premium-page .silver .card {
+	border: 2px solid rgb(192,192,192);
+}
+.premium-page .silver .card-header {
+	background: rgb(192,192,192,0.125);
+}
+
+.premium-page .gold .card {
+	border: 2px solid rgba(255, 215, 0, 0.8);
+}
+.premium-page .gold .card-header {
+	background: rgb(255, 215, 0, 0.125);
+}
+/* FAQ */
+.faq-card {
+	margin-bottom: 20px;
+}
+.faq-card .list-group-item {
+	padding: 0.4em 0.4em;
+}
+.faq-card a {
+	color: #212529;
+}
+.faq-card a:hover {
+	color: #444d55;
+}
+.faq-body {
+	margin-bottom: 50px;
+}
+.faq-body a {
+	color: #212529;
+}
+.faq-body a:hover {
+	color: #444d55;
+}
+.faq-body p a {
+	color: #330000;
+}
+.faq-body p a:hover {
+	color: #330000;
+}
+/* Partners */
+.partner-page .row {
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+}
+.partner-page .col-lg-4 {
+	margin-bottom: 30px;
+}
+.partner-page .card-img-top {
+	width: 130px;
+	margin: 15px auto 0;
+	border: 1px solid rgb(0,0,0,0.125);
+	border-radius: 100%;
+}
+
+/* Adaptive */
+
+@media only screen and (max-width: 992px) {
+	.server-block {
+		width: 48%;
+	}
+	.myserver-block {
+		width: 48.6%;
+	}
+	.addserver-block {
+		width: 48.6%;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.server-block {
+		width: 100%;
+	}
+	.myserver-block {
+		width: 100%;
+	}
+	.addserver-block {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 525px) {
+	.index-container {
+		height: 260px;
+	}
+	.index-container .index-title {
+		font-size: 2.000em;
+	}
+}
+
+.members {
+  color: black!important;
+}

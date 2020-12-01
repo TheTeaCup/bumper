@@ -1,0 +1,167 @@
+<%- include('./Blocks/Header.ejs', { Bumper, user, Page, Redirect: "/info/" + Guild.id + "/edit" }) %>
+<link rel="stylesheet" href="/css/page.css">
+
+
+	<script>
+	
+function UPDIV(xid,xval)
+{
+document.getElementById(xid).innerHTML=xval;
+}
+
+function XSHOW(xid)
+{
+document.getElementById(xid).style.visibility="visible";
+}
+
+function XHIDE(xid)
+{
+document.getElementById(xid).style.visibility="hidden";
+}	
+	
+function xcheck()
+{
+
+ca=document.getElementById("desc").value.length;
+cb=document.getElementById("fulldesc").value.length;
+cc=document.getElementById("discjoin").value.length;
+
+ct1=document.getElementById("tag1").value.length;
+ct2=document.getElementById("tag2").value.length;
+ct3=document.getElementById("tag3").value.length;
+ct4=document.getElementById("tag4").value.length;
+ct5=document.getElementById("tag5").value.length;
+
+
+//tag1, 2, x
+ct=0;
+mn=3;
+if(ct1>=mn) {ct++;}
+if(ct2>=mn) {ct++;}
+if(ct3>=mn) {ct++;}
+if(ct4>=mn) {ct++;}
+if(ct5>=mn) {ct++;}
+
+xmess="";
+if(ct<2||ca<3||cb<3||cc<1)
+{
+
+
+mm=10;
+ctx=0;
+if(ct1>mm||ct2>mm||ct3>mm||ct4>mm||ct5>mm) cxt=1;
+
+if(ct<2) xmess=xmess+"<div class='alert alert-warning' role='alert'><strong>Warning!<strong> You need to add at least 2 tags, "+mn+"-"+mm+" characters length</div>";
+if(ctx==1) xmess=xmess+"<div class='alert alert-warning' role='alert'><strong>Warning!<strong>  Maximum allowed tag length is "+mm+" characters</div>";
+if(ca<3) xmess=xmess+"<div class='alert alert-warning' role='alert'><strong>Warning!<strong> You need to add a short description</div>";
+if(cb<3) xmess=xmess+"<div class='alert alert-warning' role='alert'><strong>Warning!<strong> You need to add a long description</div>";
+if(cc<1) xmess=xmess+"<div class='alert alert-warning' role='alert'><strong>Warning!<strong> You need to add a valid Join Link</div>";
+
+
+UPDIV("errormessagejs",xmess);
+XSHOW("errormessagejs");
+} else {
+UPDIV("errormessagejs","");
+XHIDE("errormessagejs");
+}
+
+//alert(ca);alert(cb);alert(cc);alert(ct);
+
+if(xmess>"") return false;
+return true;
+
+//errormessage updiv
+//ssubm - savebutton  
+}
+
+function xsend()
+{
+return false;
+}
+
+
+	</script>
+	
+	<!-- Content -->
+	<div class="container">
+	
+		<div id="errormessage"></div>
+		
+		
+	
+	<div class="col-lg-7 card server-form-panel">
+	  <article class="card-body">
+		<form action="" method="post" role="form">
+		
+		<h4 class="card-title mt-3 text-center"><%= Guild.name %></h4>
+		<p class="text-center">Editing You're Server</p>
+		<hr>
+		<input type="hidden" name="id" value="5454">
+		<h5>Tags <span style="color:red">*</span></h5>
+		
+		<div class="form-group input-group">
+		  <div class="input-group-prepend">
+			  <span class="input-group-text"><i class="fas fa-tag" style="padding:0"></i></span>
+		   </div>
+			  <input name="tag1" id="tag1" class="form-control xtags" placeholder="Write tag" type="text" value="<%- slotOne %>" required>
+		  </div>
+		
+		<div class="form-group input-group">
+		  <div class="input-group-prepend">
+			  <span class="input-group-text"><i class="fas fa-tag" style="padding:0"></i></span>
+		   </div>
+			  <input name="tag2" id="tag2" class="form-control xtags" placeholder="Write tag" type="text" value="<%- slotTwo %>" required>
+		  </div>
+		
+		<div class="form-group input-group">
+		  <div class="input-group-prepend">
+			  <span class="input-group-text"><i class="fas fa-tag" style="padding:0"></i></span>
+		   </div>
+			  <input name="tag3" id="tag3" class="form-control xtags" placeholder="Write tag" type="text" value="<%- slotThree %>" required>
+		  </div>
+		
+		<div class="form-group input-group">
+		  <div class="input-group-prepend">
+			  <span class="input-group-text"><i class="fas fa-tag" style="padding:0"></i></span>
+		   </div>
+			  <input name="tag4" id="tag4" class="form-control xtags" placeholder="Write tag" type="text" value="<%- slotFour %>">
+		  </div>
+		
+		<div class="form-group input-group">
+		  <div class="input-group-prepend">
+			  <span class="input-group-text"><i class="fas fa-tag" style="padding:0"></i></span>
+		   </div>
+			  <input name="tag5" id="tag5" class="form-control xtags" placeholder="Write tag" type="text" value="<%- slotFive %>">
+		  </div>
+		
+		  <p class="help-block">- Minimum amount of tags are 3 <br>- Each tag shouldn't be more than 11 characters
+		  </p>
+		  <h5>Short Description <span style="color:red">*</span></h5>
+		  <div class="form-group">
+			<textarea onchange="xcheck()" name="desc" class="form-control" rows="6" placeholder="Write short description about your server" maxlength="240"><%- ShortDesc %></textarea>
+		  </div>
+		  <p class="help-block">- Minimum 50 characters <br> - Maximum 240 characters
+		  </p>
+		  <h5>Long Description <span style="color:red">*</span></h5>
+		  <div class="form-group">
+			<textarea onchange="xcheck()" name="fulldesc" class="form-control" rows="6" placeholder="Write LONG description about your server" maxlength="1500"><%- Desc %></textarea>
+		  </div>
+		  <p class="help-block">- Minimum 100 characters <br> - Maximum 1500 characters
+		  </p> 
+		<h5>Invite link <span style="color:red">*</span></h5>
+		<div class="form-group input-group">
+		  <div class="input-group-prepend">
+			  <span class="input-group-text"><i class="fas fa-link" style="padding:0"></i></span>
+		   </div>
+			  <input onchange="xcheck()" id="discjoin" name="discjoin" class="form-control" placeholder="Write invite link to your discord server" type="text" value="https://discord.gg/<%- Invite %>">
+		  </div>  
+		  <p class="help-block">- The link should start with https://discord.gg/ <br> - Please write permanent link otherwise you will get error about expired link <br> - The wrong written link will cause an error
+		  </p><br>
+		  <div class="form-group">
+			  <button type="submit" class="btn btn-red btn-block" id="ssubm" name="ssubm" onclick="return xcheck();">Save Server</button>
+		  </div>
+		
+	  </form>
+	  </article>
+	  </div>
+	</div>

@@ -1,0 +1,108 @@
+<%- include('./Blocks/Header.ejs', { Bumper, user, Page, Redirect: "/me" }) %>
+<link rel="stylesheet" href="/css/page.css">
+<br>
+<style>
+h1{
+  font-size:25px;
+  color: #8f78a7;
+}
+  .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem; }
+  .card > hr {
+    margin-right: 0;
+    margin-left: 0; }
+  .card > .list-group:first-child .list-group-item:first-child {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem; }
+  .card > .list-group:last-child .list-group-item:last-child {
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem; }
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem; }
+  
+  .card {
+  color: #212529; }
+  
+ .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%; }
+  
+  .item {
+    position:relative;
+    padding-top:20px;
+    display:inline-block;
+}
+
+</style>
+<center>
+<img class="img-fluid d-block rounded-circle mx-auto" src="<%= avatar %>" data-toggle="tooltip" data-placement="top" title="<%= user.username %>">
+<h1> Welcome to the dashboard <%=user.username%>. </h1>
+</center>
+<hr>
+<br><br>
+<div class="py-5 ">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="card">
+<div class="card-body">
+<h4>Guild Management</h4>
+<h6 class="text-muted">Select the guild you want to manage. To be able to see new guilds, please <a href="/logout">re-login</a>.</h6>
+<br />
+<div class="row">
+
+
+  <% Bumper.guilds.forEach(guild => { 
+   %>
+     
+   <%   let href, text;
+      let enabled;
+      let disabled;
+      let classification;
+      let url 
+      
+  
+        
+          
+          href = `/info/${guild.id}/edit`;
+          text = "Bot is in the server.";
+          enabled = "ntf-green";
+          classification = "check";
+
+%>
+   
+<div class="col-md-4" style="padding-bottom: 25px;">
+<center>
+<div class="item">
+<a href="<%= href %>">
+<span class="notify-badge <%= enabled %>" data-toggle="tooltip" data-placement="top" title="<%= text %>"><i class="fa d-inline fa-lg fa-<%= classification %>"></i></span>
+  <% if (guild.icon) { %>
+   <img class="img-fluid d-block rounded-circle mx-auto" src="<%= `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128`; %>" alt="" data-toggle="tooltip" data-placement="top" title="<%= guild.name %>">
+  <% } else { %>
+  <img class="d-flex mr-3 rounded-circle" src="https://i.imgur.com/2otMem9.png" style="width: 140px;" alt="">
+<% } %>
+  </a>
+</div>
+</center>
+</div>
+
+<% }) %>
+  <!-- End user Guilds -->
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
